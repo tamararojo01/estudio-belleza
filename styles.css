@@ -199,6 +199,7 @@ h1 {
   padding: 0.66rem 0.95rem;
   font-size: 0.9rem;
   background: #f0e3dc;
+  white-space: nowrap;
 }
 
 .btn-xl {
@@ -212,6 +213,22 @@ h1 {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.hero-proof {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.hero-proof span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: #fff7f2;
 }
 
 .hero-image img {
@@ -256,6 +273,22 @@ h1 {
 
 .card p {
   color: var(--text-muted);
+}
+
+.money-text {
+  margin: 0.95rem 0 1rem;
+  font-weight: 600;
+  color: #5f3d2f;
+}
+
+.pain-list {
+  margin: 0.75rem 0;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+}
+
+.pain-list li + li {
+  margin-top: 0.45rem;
 }
 
 .card ul {
@@ -369,6 +402,12 @@ h1 {
   color: #5e3f2f;
 }
 
+.loss-warning {
+  margin: 0 0 1rem;
+  font-weight: 700;
+  color: #3f271b;
+}
+
 .footer {
   background: #1b1512;
   color: #ddcec4;
@@ -393,18 +432,19 @@ h1 {
 
 .floating-whatsapp {
   position: fixed;
-  right: 0.9rem;
-  bottom: 0.9rem;
+  right: 0.85rem;
+  bottom: 0.85rem;
   z-index: 60;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.86rem 1rem;
+  padding: 0.92rem 1.1rem;
   border-radius: 999px;
   color: #ffffff;
   background: var(--success);
-  box-shadow: 0 16px 28px rgba(29, 156, 89, 0.33);
+  box-shadow: 0 18px 30px rgba(29, 156, 89, 0.4);
   font-weight: 700;
+  animation: floatingPulse 1.8s ease-in-out infinite;
 }
 
 .floating-whatsapp:hover {
@@ -419,6 +459,18 @@ h1 {
   place-items: center;
   background: rgba(255, 255, 255, 0.2);
   font-size: 0.72rem;
+}
+
+@keyframes floatingPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(29, 156, 89, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(29, 156, 89, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(29, 156, 89, 0);
+  }
 }
 
 .reveal {
@@ -446,17 +498,15 @@ h1 {
   }
 
   .floating-whatsapp {
+    left: 0.6rem;
     right: 0.6rem;
     bottom: 0.6rem;
-    padding: 0.8rem 0.92rem;
+    justify-content: center;
+    padding: 0.92rem 0.92rem;
   }
 }
 
 @media (min-width: 760px) {
-  .nav {
-    display: flex;
-  }
-
   .hero {
     padding: 4.8rem 0 3.4rem;
   }
